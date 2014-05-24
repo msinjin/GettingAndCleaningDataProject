@@ -15,3 +15,6 @@ The variables names are:
 The final set of variables are the Body and Gravity vectors averaged:
 - timeBodyGyroMeanGravityMean, timeBodyGyroJerkMeanGravityMean, XGravityMean, YGravityMean, ZGravityMean
 
+In order to produce this tidy dataset I joind the data and descriptors for both the training and test data (X_test.txt, Y_test.txt, X_train.txt, Y_train.txt) and matched the test "subject" information (subject.test, subject.train) and "activity" names. Then I added the variable names from the features.txt file.
+
+Once all these data were incoporated into a single dataframe I was able to extract only those columns of interes (means and standard deviations) using a grep on variable names. I then used a series of grep commands to substitue confusing variable names for more interpretable ones. Finally I used melt() and dcast() to create a new dataframe with the calculated means for each variable by each subject-activity pair.
