@@ -2,7 +2,7 @@
 
 The R script run_analysis.R takes a series of data files and descriptors from the "Human Activity Recognition Using Smartphones Data Set" and returns a "tidy" dataset of mean values for further analysis.
 
-The variables (and their derivations) in order of appearances in the data set are:
+The variables (and their derivations) in order of appearances in the tidy data set are:
 
 - subject. Has values 1-30 for each participant in the study.
 - activity. Has 6 possible values: LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS.
@@ -17,4 +17,5 @@ The final set of variables are the Body and Gravity vectors averaged:
 
 In order to produce this tidy dataset I joind the data and descriptors for both the training and test data (X_test.txt, Y_test.txt, X_train.txt, Y_train.txt) and matched the test "subject" information (subject.test, subject.train) and "activity" names. Then I added the variable names from the features.txt file.
 
-Once all these data were incoporated into a single dataframe I was able to extract only those columns of interes (means and standard deviations) using a grep on variable names. I then used a series of grep commands to substitue confusing variable names for more interpretable ones. Finally I used melt() and dcast() to create a new dataframe with the calculated means for each variable by each subject-activity pair.
+Once all these data were incoporated into a single dataframe I was able to extract only those columns of interest (means and standard deviations) using a grep on variable names. I then used a series of grep commands to substitue confusing variable names for more interpretable ones. Finally I used melt() and dcast() to create a new dataframe with the calculated means for each variable by each subject-activity pair. This was written to a new tab-deliminated file called "tidyData.txt."
+
