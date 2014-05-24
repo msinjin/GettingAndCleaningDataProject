@@ -3,6 +3,8 @@ GettingAndCleaningDataProject
 
 Code for the class project: tidying a data set for analysis ("Human Activity Recognition Using Smartphones Data Set").
 
+The data can be found here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
 This R script does the following in order:
 - Merges the training and test datasets
 - Brings in variable and activity names information
